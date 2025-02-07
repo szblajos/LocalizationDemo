@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Freezing" xml:space="preserve">
+    <value>Fagyos</value>
+  </data>
+  <data name="Bracing" xml:space="preserve">
+    <value>Élénkítő</value>
+  </data>
+  <data name="Chilly" xml:space="preserve">
+    <value>Hűvös</value>
+  </data>
+  <data name="Cool" xml:space="preserve">
+    <value>Hűvös</value>
+  </data>
+  <data name="Mild" xml:space="preserve">
+    <value>Enyhe</value>
+  </data>
+  <data name="Warm" xml:space="preserve">
+    <value>Meleg</value>
+  </data>
+  <data name="Balmy" xml:space="preserve">
+    <value>Langyos</value>
+  </data>
+  <data name="Hot" xml:space="preserve">
+    <value>Forró</value>
+  </data>
+  <data name="Sweltering" xml:space="preserve">
+    <value>Tikkasztó</value>
+  </data>
+  <data name="Scorching" xml:space="preserve">
+    <value>Perzselő</value>
+  </data>
+</root>
