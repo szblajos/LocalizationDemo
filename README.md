@@ -5,7 +5,7 @@
 # LocalizationDemo.Api
 
 This project demonstrates how to implement localization in an ASP.NET Core 9 minimal API. The example includes configuring localization services, adding resource files for different cultures, and using a `ResourceLocalizer` generic class to localize weather summaries.
-The project based on the current webapi template of .NET 9 SDK, for siplicity.
+The project based on the current webapi template of .NET 9 SDK, for simplicity.
 
 ## Getting Started
 
@@ -60,10 +60,10 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 ### Adding Resource Files
 Resource files store localized strings for different cultures. In this project, we have two resource files:
-- `Resources/Weather.en-US.resx` (English)
-- `Resources/Weather.hu-HU.resx` (Hungarian)
+- `Resources/WeatherResource.en-US.resx` (English)
+- `Resources/WeatherResource.hu-HU.resx` (Hungarian)
 
-Here is an example of the content of `Weather.en-US.resx`:
+Here is an example of the content of `WeatherResource.en-US.resx`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -164,11 +164,14 @@ To keep resource files organized, you can separate them by endpoints. For exampl
 
 This approach helps maintain a clean structure and makes it easier to manage localized strings for different parts of your application.
 
-Place your marker class in the Markers.cs file for each endpoints:
+Place your new endpoint marker class in the Markers.cs file for each endpoints:
 ```csharp
 public class WeatherResource {}
 public class AnotherEndpointResource {}  // marker class for a separate endpoint
 ```
+
+> [!NOTE]
+> Note that the marker class name exactly matches the part of the resx file name before the locale information.
 
 Then add a new ResourceLocalizer as a new scoped service, but with the type of the new marker class:
 ```csharp
@@ -188,7 +191,6 @@ This project demonstrates how to implement localization in an ASP.NET Core 9 min
 ## Resources
 
 - [ASP.NET Core Localization Documentation](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization)
-- [Globalization and localization in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/localization)
 - [Resource files in .NET](https://docs.microsoft.com/en-us/dotnet/core/extensions/work-with-resx-files-programmatically)
 - [Localization in .NET 9](https://docs.microsoft.com/en-us/dotnet/core/extensions/localization)
 - [Localization in ASP.NET Core: Make Your Minimal APIs Multilingual](https://www.ottorinobruni.com/localization-in-asp-net-core-make-your-minimal-apis-multilingual/)
