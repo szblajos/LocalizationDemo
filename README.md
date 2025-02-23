@@ -25,7 +25,7 @@ The project based on the current webapi template of .NET 9 SDK, for simplicity.
    dotnet build
    dotnet run --project src/LocalizationDemo.Api
    ```
-3. Open your browser and navigate to [http://localhost:<YOUR_PORT>/scalar/]() to explore the API using [Scalar API Client](https://github.com/scalar/scalar)
+3. Open your browser and navigate to [http://localhost:5122/scalar/]() to explore the API using [Scalar API Client](https://github.com/scalar/scalar)
 
 ## Localization
 Localization is the process of adapting an application to different languages and cultures. In this project, we use resource files to store localized strings and configure the localization services in the `Program.cs` file.
