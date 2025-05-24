@@ -108,3 +108,5 @@ record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+public partial class Program { } // This is a hack for minimal APIs. We need to add this at the end of the file to expose Program for testing
