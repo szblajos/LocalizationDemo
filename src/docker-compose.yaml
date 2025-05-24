@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  localizationdemo-api:
+    build:
+      context: .
+      dockerfile: ./LocalizationDemo.Api/Dockerfile
+    image: localizationdemo-api:latest
+    container_name: localizationdemo-api
+    ports:
+      - "5122:5122"
