@@ -185,6 +185,30 @@ app.MapGet("/anotherendpoint", ([FromServices] IResourceLocalizer<AnotherEndpoin
 
 By organizing resource files this way, you can easily manage and update localized strings for each endpoint independently.
 
+## Testing Localization with curl
+
+You can test the API's localization by setting the `Accept-Language` header in your requests. Here are some examples:
+
+**English (US):**
+
+```bash
+curl -H "Accept-Language: en-US" http://localhost:5122/weatherforecast
+```
+
+**Hungarian:**
+
+```bash
+curl -H "Accept-Language: hu-HU" http://localhost:5122/weatherforecast
+```
+
+**Unsupported language (fallback to en-US):**
+
+```bash
+curl -H "Accept-Language: fr-FR" http://localhost:5122/weatherforecast
+```
+
+If you use any language not supported by the API, the response will default to English (en-US).
+
 ## Conclusion
 This project demonstrates how to implement localization in an ASP.NET Core 9 minimal API. By configuring localization services, adding resource files, and using the `ResourceLocalizer` generic class, you can easily adapt your application to different languages and cultures.
 
