@@ -2,10 +2,25 @@
 ![GitHub issues](https://img.shields.io/github/issues/szblajos/LocalizationDemo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# LocalizationDemo.Api
+# LocalizationDemo
 
-This project demonstrates how to implement localization in an ASP.NET Core 9 minimal API. The example includes configuring localization services, adding resource files for different cultures, and using a `ResourceLocalizer` generic class to localize weather summaries.
-The project based on the current webapi template of .NET 9 SDK, for simplicity.
+This project demonstrates how to implement localization (i18n/l10n) in ASP.NET Core 9, featuring both a minimal API backend and a Blazor WebAssembly frontend with real-time language switching.
+
+## Projects
+
+### LocalizationDemo.Api
+A minimal API that demonstrates server-side localization with:
+- Configurable localization services
+- Resource files for multiple cultures (English, Hungarian)
+- `ResourceLocalizer` generic class for weather summaries
+- Accept-Language header support
+
+### LocalizationDemo.BlazorFrontend  
+A Blazor WebAssembly frontend that demonstrates client-side language switching with:
+- Interactive language selector dropdown
+- Real-time weather data localization
+- API integration with proper Accept-Language headers
+- Persistent language selection
 
 ## Getting Started
 
@@ -13,19 +28,30 @@ The project based on the current webapi template of .NET 9 SDK, for simplicity.
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 
-### Running the Project
+### Running the Projects
 
+#### API Backend
 1. Clone the repository:
    ```bash
    git clone https://github.com/szblajos/LocalizationDemo.git
    cd LocalizationDemo
    ```
-2. Build and run the project:
+2. Build and run the API:
    ```bash
    dotnet build
    dotnet run --project src/LocalizationDemo.Api
    ```
-3. Open your browser and navigate to [http://localhost:5122/scalar/]() to explore the API using [Scalar API Client](https://github.com/scalar/scalar)
+3. The API will be available at [http://localhost:5122](http://localhost:5122)
+4. Explore the API using [Scalar API Client](https://github.com/scalar/scalar) at [http://localhost:5122/scalar/](http://localhost:5122/scalar/)
+
+#### Blazor Frontend
+1. In a separate terminal, run the frontend:
+   ```bash
+   dotnet run --project src/LocalizationDemo.BlazorFrontend
+   ```
+2. Open your browser and navigate to [http://localhost:5254](http://localhost:5254)
+3. Click "Weather" to see localized weather data
+4. Use the language selector in the top-right corner to switch between English and Hungarian
 
 ## Localization
 Localization is the process of adapting an application to different languages and cultures. In this project, we use resource files to store localized strings and configure the localization services in the `Program.cs` file.
