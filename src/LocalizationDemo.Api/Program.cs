@@ -46,6 +46,17 @@ services.Configure<RequestLocalizationOptions>(options =>
     ];
 });
 
+// Add CORS services
+services.AddCors(options =>
+{
+    options.AddPolicy("BlazorFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5254", "https://localhost:5254")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -56,6 +67,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Enable CORS
+app.UseCors("BlazorFrontend");
 
 app.UseRequestLocalization();
 
